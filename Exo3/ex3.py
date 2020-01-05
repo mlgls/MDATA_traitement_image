@@ -31,6 +31,7 @@ for img_name in names:
 
 result = {}
 for (k, hist) in index.items():
+    # on choisit de comparer l'image waves.jpg aux autres images
     comp = cv2.compareHist(index["waves"], hist, cv2.HISTCMP_BHATTACHARYYA)
     result[k] = comp
 result = sorted([(v, k) for (k, v) in result.items()])
